@@ -24,8 +24,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            export PIPENV_VENV_IN_PROJECT=1
             export PATH=$HOME/.local/bin:$PATH
-            pip install --user pipenv
+            sudo pip install pipenv
             pipenv install
 
       # run tests!
