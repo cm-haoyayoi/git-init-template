@@ -24,8 +24,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            pip install --user pipenv
             cd ~/repo
+            pip install --user pipenv
+            exec $SHELL -l
             pipenv install
 
       # run tests!
