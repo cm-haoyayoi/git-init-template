@@ -28,8 +28,8 @@ jobs:
           name: install dependencies
           command: |
             export PIPENV_VENV_IN_PROJECT=true
-            pip install --user pipenv
-            ~/repo/.venv/bin/pipenv install --dev
+            sudo pip install pipenv
+            pipenv install --dev
 
       - save_cache:
           key: cache-{{ checksum "Pipfile.lock" }}
