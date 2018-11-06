@@ -27,8 +27,9 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            export PIPENV_VENV_IN_PROJECT=true
             pip install --user pipenv
-            pipenv install --dev
+            ~/repo/.venv/bin/pipenv install --dev
 
       - save_cache:
           key: cache-{{ checksum "Pipfile.lock" }}
@@ -44,7 +45,7 @@ jobs:
       - run:
           name: run tests
           command: |
-            pipenv run "tox"
+            ~/repo/.venv/bin/pipenv run "tox"
 
       - store_artifacts:
           path: test-reports
