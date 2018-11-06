@@ -35,7 +35,8 @@ jobs:
       - run:
           name: run tests
           command: |
-            export PATH=$HOME/.local/bin:$(/usr/local/bin/pipenv --venv)/bin:$PATH
+            which pipenv
+            export PATH=$HOME/.local/bin:$(pipenv --venv)/bin:$PATH
             pipenv run tox
 
       - store_artifacts:
