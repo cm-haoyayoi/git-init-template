@@ -15,7 +15,7 @@ git initでtemplateに引数として渡すためのリソースではありま�
 
 ## virtualenv
 ```
-% pipenv install
+% pipenv install --dev
 % pipenv shell
 ```
 
