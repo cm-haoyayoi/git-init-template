@@ -24,7 +24,8 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            sudo pip install pipenv
+            pip install --user pipenv
+            cd ~/repo
             pipenv install
 
       # run tests!
