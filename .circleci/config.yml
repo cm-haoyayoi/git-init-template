@@ -22,7 +22,9 @@ jobs:
 
       - run:
           name: install dependencies
-          command: pipenv install
+          command: |
+            pip install pipenv
+            pipenv install
 
       # run tests!
       # this example uses Django's built-in test-runner
