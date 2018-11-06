@@ -23,6 +23,7 @@ jobs:
       - run:
           name: install dependencies
           command: |
+            export PATH=$HOME/.local/bin:$PATH
             pip install --user pipenv
             pipenv install
 
