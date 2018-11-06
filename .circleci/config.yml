@@ -34,7 +34,10 @@ jobs:
       # https://nose.readthedocs.io
       - run:
           name: run tests
-          command: tox
+          command: |
+            export PATH=$HOME/.local/bin:$PATH
+            pipenv shell
+            tox
 
       - store_artifacts:
           path: test-reports
